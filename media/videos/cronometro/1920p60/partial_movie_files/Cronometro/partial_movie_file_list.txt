@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/cronometro/1920p60/partial_movie_files/Cronometro/1544015774_1024137693_223132457.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/cronometro/1920p60/partial_movie_files/Cronometro/555675692_1542728308_2573487763.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/cronometro/1920p60/partial_movie_files/Cronometro/555675692_2688965532_2830020969.mp4'

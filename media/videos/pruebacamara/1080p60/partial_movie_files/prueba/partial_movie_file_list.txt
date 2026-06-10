@@ -1,0 +1,12 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/1932428738_1579776105_223132457.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_3297111203_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_4257079762_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_3218335469_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_1773742193_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_952485456_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_314874317_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_2779633908_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_1229411790_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_3818999109_3724267855.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/pruebacamara/1080p60/partial_movie_files/prueba/3395203541_3842922632_3724267855.mp4'

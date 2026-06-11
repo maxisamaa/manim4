@@ -72,14 +72,19 @@ class cartas(MovingCameraScene):
         cartas.stretch(1.5, dim=0)
         fondos.stretch(1.5, dim=0)
 
-        # -------------------------------------------------
-        # MOSTRAR CARTAS ORIGINALES
-        # -------------------------------------------------
-
         self.play(*[Write(carta)for carta in cartas],*[Write(fondo)for fondo in fondos],run_time=1) # el * desempaqueta la lista a elementos separados por una coma
         #[Write(carta)for carta in cartas]  ES IGUAL A  
         #animaciones = []
         #for carta in cartas:
          #   animacion = Write(carta)
           #  animaciones.append(animacion)
+
+        texto = Text(
+            "52 cartas = \n"
+            "52! Permutaciones",
+            font_size=60
+        )
+        texto.next_to(cartas, RIGHT*2, buff=0.5)
+        todo=VGroup(texto)
+        self.play(Write(texto))
         self.wait(2)

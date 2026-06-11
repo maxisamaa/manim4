@@ -98,7 +98,7 @@ class cartas(MovingCameraScene):
             carta.get_center()
             for carta in cartas
         ]
-        self.wait()
+        self.wait(0.5)
 
         todas_las_filas = VGroup()
 
@@ -108,13 +108,10 @@ class cartas(MovingCameraScene):
         # CREAR TODAS LAS PERMUTACIONES
         # -------------------------------------------------
         cartas_estatico=cartas
-        cartas_puntero=cartas # esto seguira la camara
+        
         for i, combinacion in enumerate(permutaciones,start=1):# start=1 solo cambia el orden de las posiciones 
             
             cartas = cartas.copy()
-
-            if i>4:
-                cartas_puntero=cartas
 
             self.add(cartas)
 
@@ -126,10 +123,12 @@ class cartas(MovingCameraScene):
             )
 
             animaciones = []
+            if i>3:
+                animaciones.append(self.camera.frame.animate.shift(3.5*DOWN))
             for j in range(len(cartas)):
                 carta = cartas[j]
                 for indice,elemento in enumerate(cartas_estatico):
-                    if carta.id_carta==elemento.id_carta: #esto no funciona por ahora ,ayudame a acceder al nombre del archivo como un string y comparar esos para que funcione el codigo 
+                    if carta.id_carta==elemento.id_carta:
                         indice1=indice
 
                         indice_destino = combinacion[indice1]
@@ -143,8 +142,9 @@ class cartas(MovingCameraScene):
                         break
             
             todas_las_filas.add(cartas)
-            self.play(*animaciones,
-            self.camera.frame.animate.move_to(cartas_puntero.get_center()), run_time=0.6)
+            # self.play(*animaciones,
+            # self.camera.frame.animate.move_to(cartas_puntero.get_center()), run_time=0.6)
+            self.play(*animaciones, run_time=0.6)
             
 #centro_destino = posiciones_originales[1] + DOWN * 3.5 * i  # columna del medio
 #self.play(*animaciones,

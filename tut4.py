@@ -112,7 +112,7 @@ class cartas(Scene):
                 cartas.animate.shift(
                     DOWN * (0.9) # cambiar de 1  3.5 , para 3 cartas
                 ),
-                run_time=0.4
+                run_time=0.3
             )
 
             animaciones = []
@@ -133,6 +133,6 @@ class cartas(Scene):
                         break
 
 
-            self.play(*animaciones, run_time=0.6)
+            self.play(*animaciones, run_time=0.4)
 
         self.wait(2)

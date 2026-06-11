@@ -3,6 +3,7 @@ from pathlib import Path
 import math
 import numpy as np
 
+
 class Prueba(MovingCameraScene):
     def construct(self):
         triangulo = Triangle()
@@ -37,12 +38,90 @@ class Prueba(MovingCameraScene):
             self.camera.frame.animate.shift(UP * 3),
             run_time=5,rate_func=linear
         )
-        self.wait(1)
+        self.wait(0.5)
         
 #self.camera.frame.animate.move_to(cartas.get_center() + UP * 2) 
 # shift mueve una cantidad relativa a la posicion original
 #move.to sigue una posicion absoluta , crea una grilla de posiciones . 
 #next_to sirve para usar posiciones relativas a objetos ya creados
+
+class cartas(MovingCameraScene):
+    def construct(self):
+        
+        # LEER Y RENOMBRAR SVG AUTOMATICAMENTE
+        carpeta = Path("assets3")
+        archivos = carpeta.glob("*.svg")
+        
+        for i, archivo in enumerate(archivos):
+            # Usamos concatenación (+) y convertimos i a string con str()
+            numero_con_cero = str(i).zfill(2) # para evitar que sorted ordene mal , el 11 despues del 1 
+            nuevo_nombre = carpeta / ("pokercard" + numero_con_cero + ".svg")
+
+            archivo.rename(nuevo_nombre)
+
+        # volver a leerlos ya renombrados
+        archivos = sorted(carpeta.glob("pokercard*.svg"))
+
+        # -------------------------------------------------
+        # CREAR CARTAS BASE
+        # -------------------------------------------------
+
+        cartas = VGroup()
+
+        for indice_archivo,archivo in enumerate(archivos):
+
+            carta = SVGMobject(archivo)
+
+            carta.id_carta = indice_archivo
+
+            carta.set_stroke(
+                WHITE,
+                width=0.2
+            )
+
+            carta.set_fill(
+                WHITE,
+                opacity=1
+            )
+
+            cartas.add(carta)
+
+        # cartas.arrange(
+        #     RIGHT,
+        #     buff=-0.3
+        # )
+        for i, carta in enumerate(cartas):
+            carta.shift(UP*9+DOWN*0.3*i)
+            carta.set_z_index(i)
+            fondo = RoundedRectangle(
+            corner_radius=0.15,
+            width=carta.width,
+            height=carta.height,
+            fill_color=BLACK,
+            fill_opacity=1,
+            stroke_width=0
+        )
+            fondo.move_to(carta)
+            fondo.set_z_index(i*0.9999)
+            self.add(fondo)
+            
+
+
+        cartas.scale(1) # 1.5 para 3 objetos
+
+        # -------------------------------------------------
+        # MOSTRAR CARTAS ORIGINALES
+        # -------------------------------------------------
+
+        self.play(*[Write(carta)for carta in cartas],run_time=1) # el * desempaqueta la lista a elementos separados por una coma
+        #[Write(carta)for carta in cartas]  ES IGUAL A  
+        #animaciones = []
+        #for carta in cartas:
+         #   animacion = Write(carta)
+          #  animaciones.append(animacion)
+        self.wait(2)
+          
+
 
 
 

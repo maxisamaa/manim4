@@ -3,7 +3,7 @@ from pathlib import Path
 import math
 
 # 3 cartas
-class cartas(Scene):
+class cartas(MovingCameraScene):
     def construct(self):
         # FUNCION RECURSIVA
         def permutar(lista):
@@ -88,6 +88,7 @@ class cartas(Scene):
         permutaciones = permutar(lista)
 
         permutaciones = permutaciones[1:15] # elimino la primera permutacion 
+        puestos=len(permutaciones)
 
         # -------------------------------------------------
         # PRIMERA FILA
@@ -117,16 +118,17 @@ class cartas(Scene):
                 cartas.animate.shift(
                     DOWN * (2.8) # cambiar de 1  3.5 , para 3 cartas
                 ),
-                run_time=0.4
+                run_time=0.2
             )
 
             animaciones = []
+            if i>5 and i<13:
+                animaciones.append(self.camera.frame.animate.shift(3*DOWN))
             for j in range(len(cartas)):
                 carta = cartas[j]
                 for indice,elemento in enumerate(cartas_estatico):
-                    if carta.id_carta==elemento.id_carta: #esto no funciona por ahora ,ayudame a acceder al nombre del archivo como un string y comparar esos para que funcione el codigo 
+                    if carta.id_carta==elemento.id_carta: 
                         indice1=indice
-
                         indice_destino = combinacion[indice1]
 
                         posicion_destino = posiciones_originales[indice_destino]
@@ -138,7 +140,7 @@ class cartas(Scene):
                         break
             
             todas_las_filas.add(cartas)
-            self.play(*animaciones, run_time=0.2)
+            self.play(*animaciones, run_time=0.3)
 
         #cronometro
         # borde exterior
@@ -159,6 +161,11 @@ class cartas(Scene):
             UP * 1,
             stroke_width=10
         )
+        manecilla2 = Line(
+            ORIGIN,
+            UP * 0.6,
+            stroke_width=15
+        )
 
         marcas=VGroup()
         for i in range(12):
@@ -175,41 +182,48 @@ class cartas(Scene):
             marcas.add(marca)
 
         texto = Text(
-            "6 segundos",
-            font_size=50
+            "120 segundos",
+            font_size=60
         )
         texto.next_to(circulo, DOWN*2, buff=0.5)
         texto2 = Text(
             "Si 1 permutacion equivale \n"
             "a 1 segundo entonces :",
-            font_size=64
+            font_size=48
+        )
+        texto3 = Text(
+            "120 Permutaciones",
+            font_size=50
         )
         texto2.next_to(circulo, UP*16, buff=0.2)
+        texto3.next_to(circulo,UP*10,buff=0.2)
 
         cronometro = VGroup(
             circulo,
             boton,
-            manecilla,
+            manecilla,manecilla2,
             marcas,
-            texto)
+            texto,texto2,texto3)
+        
         cronometro.scale(1.5)
+        cronometro.move_to(self.camera.frame.get_center())
 
         anim_cartas = todas_las_filas.animate.shift(LEFT * 15)
-        anim_cronometro = AnimationGroup(Create(circulo), Create(boton),Create(manecilla), Write(marcas),Write(texto2))
+        anim_cronometro = AnimationGroup(Create(circulo), Create(boton),Create(manecilla),Create(manecilla2), Write(marcas),Write(texto2),Write(texto3))
         self.play(AnimationGroup(anim_cartas,anim_cronometro,lag_ratio=0.5))
         self.wait(1)
         self.play(Write(texto),Rotate(
                 manecilla,
                 angle=-PI/8,
-                about_point=ORIGIN
+                about_point=circulo.get_center()
             ),
             run_time=1.5,)
         self.wait(1)
 
         grupoCompleto=VGroup(circulo,
             boton,
-            manecilla,
+            manecilla,manecilla2,
             marcas,
-            texto,texto2)
+            texto,texto2,texto3)
         self.play(grupoCompleto.animate.shift(LEFT*13),run_time=1)
 

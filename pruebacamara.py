@@ -90,8 +90,9 @@ class cartas(MovingCameraScene):
         #     RIGHT,
         #     buff=-0.3
         # )
+        fondos=VGroup()
         for i, carta in enumerate(cartas):
-            carta.shift(UP*9+DOWN*0.3*i)
+            carta.shift(UP*9+DOWN*0.3*i+LEFT*4)
             carta.set_z_index(i)
             fondo = RoundedRectangle(
             corner_radius=0.15,
@@ -102,12 +103,14 @@ class cartas(MovingCameraScene):
             stroke_width=0
         )
             fondo.move_to(carta)
+            fondos.add(fondo)
             fondo.set_z_index(i*0.9999)
             self.add(fondo)
             
 
 
-        cartas.scale(1) # 1.5 para 3 objetos
+        cartas.scale(1.2) # 1.5 para 3 objetos
+        fondos.scale(1.2)
 
         # -------------------------------------------------
         # MOSTRAR CARTAS ORIGINALES

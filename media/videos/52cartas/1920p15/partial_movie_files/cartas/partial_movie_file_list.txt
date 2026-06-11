@@ -1,0 +1,3 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/52cartas/1920p15/partial_movie_files/cartas/509301414_3392359452_291204302.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/52cartas/1920p15/partial_movie_files/cartas/2385148130_2230675760_3067688560.mp4'

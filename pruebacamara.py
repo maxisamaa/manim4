@@ -92,7 +92,7 @@ class cartas(MovingCameraScene):
         # )
         fondos=VGroup()
         for i, carta in enumerate(cartas):
-            carta.shift(UP*9+DOWN*0.3*i+LEFT*4)
+            carta.shift(UP*8+DOWN*0.35*i+LEFT*3)
             carta.set_z_index(i)
             fondo = RoundedRectangle(
             corner_radius=0.15,
@@ -103,20 +103,22 @@ class cartas(MovingCameraScene):
             stroke_width=0
         )
             fondo.move_to(carta)
-            fondos.add(fondo)
+            #fondos.add(fondo)
+            fondos.add(fondo) # el que quiero dibujar
             fondo.set_z_index(i*0.9999)
             self.add(fondo)
             
 
-
         cartas.scale(1.2) # 1.5 para 3 objetos
         fondos.scale(1.2)
+        cartas.stretch(1.5, dim=0)
+        fondos.stretch(1.5, dim=0)
 
         # -------------------------------------------------
         # MOSTRAR CARTAS ORIGINALES
         # -------------------------------------------------
 
-        self.play(*[Write(carta)for carta in cartas],run_time=1) # el * desempaqueta la lista a elementos separados por una coma
+        self.play(*[Write(carta)for carta in cartas],*[Write(fondo)for fondo in fondos],run_time=1) # el * desempaqueta la lista a elementos separados por una coma
         #[Write(carta)for carta in cartas]  ES IGUAL A  
         #animaciones = []
         #for carta in cartas:

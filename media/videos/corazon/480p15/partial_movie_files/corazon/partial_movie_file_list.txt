@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/corazon/480p15/partial_movie_files/corazon/1584795214_2574473371_3883229539.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/corazon/480p15/partial_movie_files/corazon/4072820271_3817892971_2397882786.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/corazon/480p15/partial_movie_files/corazon/4072820271_2574473371_194213299.mp4'

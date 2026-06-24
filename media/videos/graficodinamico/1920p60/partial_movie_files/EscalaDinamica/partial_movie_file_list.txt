@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/graficodinamico/1920p60/partial_movie_files/EscalaDinamica/1544015774_1106504797_223132457.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/graficodinamico/1920p60/partial_movie_files/EscalaDinamica/555675692_4114589461_2513006274.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/graficodinamico/1920p60/partial_movie_files/EscalaDinamica/555675692_3784382893_56829865.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/graficodinamico/1920p60/partial_movie_files/EscalaDinamica/555675692_2688965532_736471136.mp4'

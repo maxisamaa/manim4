@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/salary/480p15/partial_movie_files/SueldosChileDinamico/1584795214_3154271679_223132457.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/salary/480p15/partial_movie_files/SueldosChileDinamico/4072820271_2362884187_3011407747.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/salary/480p15/partial_movie_files/SueldosChileDinamico/4072820271_1034399190_1129294893.mp4'
+file 'file:C:/Users/desar/Desktop/manim/manimations/media/videos/salary/480p15/partial_movie_files/SueldosChileDinamico/4072820271_2688965532_2659618071.mp4'

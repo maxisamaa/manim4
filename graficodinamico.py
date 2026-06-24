@@ -144,9 +144,10 @@ class EscalaDinamica2(Scene):
             color=WHITE,
         )
         titulo2 = Paragraph(
-            "50 mil millones",
+            "Teletón",
+            "(50 mil millones)",
             "versus",
-            "22 billones",
+            "Evasión fiscal del sector privado",
             "(22 millones de millones)",
             alignment="center",
             font_size=40)
